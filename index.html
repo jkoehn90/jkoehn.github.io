@@ -354,6 +354,152 @@
     }
     .project-card:hover .card-arrow { transform: translate(4px, -4px); color: var(--accent); }
 
+    /* Featured project card — spans full width */
+    .project-card.featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+      padding: 3rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .project-card.featured::before { height: 3px; }
+
+    .featured-left {}
+    .featured-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .featured-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 0.3rem 0.8rem;
+      margin-bottom: 1rem;
+    }
+    .featured-badge::before {
+      content: '★';
+      font-size: 0.55rem;
+    }
+
+    .featured-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .featured-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .featured-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding: 1.5rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+    }
+    .metric {
+      text-align: center;
+    }
+    .metric-num {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .metric-label {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .featured-architecture {
+      padding: 1.5rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 2;
+    }
+    .featured-architecture .arch-title {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+    .arch-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .arch-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .arch-row .arrow { color: var(--accent); }
+    .arch-row .service {
+      color: var(--text);
+      font-size: 0.7rem;
+    }
+    .arch-row .port {
+      color: var(--muted);
+      font-size: 0.65rem;
+    }
+
+    .featured-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-sm {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid;
+      text-decoration: none;
+      transition: all 0.25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .btn-sm.primary {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+    .btn-sm.primary:hover { background: transparent; color: var(--accent); }
+    .btn-sm.ghost {
+      background: transparent;
+      color: var(--muted);
+      border-color: var(--border);
+    }
+    .btn-sm.ghost:hover { border-color: var(--text); color: var(--text); }
+
     /* ADD PROJECT CARD */
     .project-card.add-card {
       border: 2px dashed var(--border);
@@ -465,6 +611,8 @@
       nav { padding: 1.2rem 1.5rem; }
       .nav-links { display: none; }
       footer { flex-direction: column; gap: 1rem; text-align: center; }
+      .project-card.featured { grid-template-columns: 1fr; gap: 2rem; }
+      .featured-metrics { grid-template-columns: repeat(3, 1fr); }
     }
   </style>
 </head>
@@ -517,7 +665,7 @@
 
     <div class="hero-stats">
       <div>
-        <div class="stat-num">0+</div>
+        <div class="stat-num">1+</div>
         <div class="stat-label">Projects</div>
       </div>
       <div>
@@ -532,17 +680,25 @@
 <div class="marquee-wrap">
   <div class="marquee-track" id="marquee">
     <span class="marquee-item">Java</span>
+    <span class="marquee-item">Spring Boot</span>
     <span class="marquee-item">Python</span>
     <span class="marquee-item">C++</span>
     <span class="marquee-item">SQL</span>
     <span class="marquee-item">Azure</span>
+    <span class="marquee-item">Kafka</span>
+    <span class="marquee-item">Docker</span>
     <span class="marquee-item">Databricks</span>
+    <span class="marquee-item">Microservices</span>
     <span class="marquee-item">Java</span>
+    <span class="marquee-item">Spring Boot</span>
     <span class="marquee-item">Python</span>
     <span class="marquee-item">C++</span>
     <span class="marquee-item">SQL</span>
     <span class="marquee-item">Azure</span>
+    <span class="marquee-item">Kafka</span>
+    <span class="marquee-item">Docker</span>
     <span class="marquee-item">Databricks</span>
+    <span class="marquee-item">Microservices</span>
   </div>
 </div>
 
@@ -550,14 +706,105 @@
 <section id="projects">
   <div class="section-header">
     <h2 class="section-title">Selected Work</h2>
-    <span class="section-count">00 — 03</span>
+    <span class="section-count">00 — 04</span>
   </div>
 
   <div class="projects-grid">
 
-    <!-- Project 1 -->
+    <!-- FEATURED: Microservices System -->
+    <div class="project-card featured">
+      <div class="featured-left">
+        <div class="featured-badge">Featured Project</div>
+        <div class="card-number">001</div>
+        <h3 class="featured-title">Microservices<br>System</h3>
+        <p class="featured-desc">
+          A production-style distributed backend built with Java and Spring Boot.
+          Five independent microservices communicate via REST and Apache Kafka,
+          secured behind a centralized JWT-validating API Gateway, all containerized
+          with Docker Compose.
+        </p>
+        <div class="card-tags">
+          <span class="tag">Java 17</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Spring Cloud</span>
+          <span class="tag">Kafka</span>
+          <span class="tag">Docker</span>
+          <span class="tag">JWT</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Eureka</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-status">
+            <div class="status-dot live"></div>
+            Live on GitHub
+          </div>
+          <span class="card-arrow">↗</span>
+        </div>
+      </div>
+
+      <div class="featured-right">
+        <div class="featured-metrics">
+          <div class="metric">
+            <div class="metric-num">5</div>
+            <div class="metric-label">Services</div>
+          </div>
+          <div class="metric">
+            <div class="metric-num">26</div>
+            <div class="metric-label">Unit Tests</div>
+          </div>
+          <div class="metric">
+            <div class="metric-num">1</div>
+            <div class="metric-label">CMD Deploy</div>
+          </div>
+        </div>
+
+        <div class="featured-architecture">
+          <div class="arch-title">Architecture</div>
+          <div class="arch-flow">
+            <div class="arch-row">
+              <span class="service">Client</span>
+            </div>
+            <div class="arch-row">
+              <span class="arrow">↓</span>
+              <span class="service">API Gateway</span>
+              <span class="port">:8080 — JWT Auth + Routing</span>
+            </div>
+            <div class="arch-row">
+              <span class="arrow">↓</span>
+              <span class="service">User Service</span>
+              <span class="port">:8081 — Auth + BCrypt</span>
+            </div>
+            <div class="arch-row">
+              <span class="arrow">↓</span>
+              <span class="service">Product Service</span>
+              <span class="port">:8082 — CRUD + Search</span>
+            </div>
+            <div class="arch-row">
+              <span class="arrow">↓</span>
+              <span class="service">Order Service</span>
+              <span class="port">:8083 — WebClient + Kafka</span>
+            </div>
+            <div class="arch-row">
+              <span class="arrow">↓</span>
+              <span class="service">Eureka Server</span>
+              <span class="port">:8761 — Discovery</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured-links">
+          <a href="https://github.com/jkoehn90/eureka-server" target="_blank" class="btn-sm ghost">Eureka ↗</a>
+          <a href="https://github.com/jkoehn90/user-service" target="_blank" class="btn-sm ghost">User ↗</a>
+          <a href="https://github.com/jkoehn90/product-service" target="_blank" class="btn-sm ghost">Product ↗</a>
+          <a href="https://github.com/jkoehn90/order-service" target="_blank" class="btn-sm ghost">Order ↗</a>
+          <a href="https://github.com/jkoehn90/api-gateway" target="_blank" class="btn-sm primary">Gateway ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
     <div class="project-card">
-      <div class="card-number">001</div>
+      <div class="card-number">002</div>
       <h3 class="card-title">Project Alpha</h3>
       <p class="card-desc">A brief description of what this project does and the problem it solves. Keep it punchy and clear.</p>
       <div class="card-tags">
@@ -574,9 +821,9 @@
       </div>
     </div>
 
-    <!-- Project 2 -->
+    <!-- Project 3 -->
     <div class="project-card">
-      <div class="card-number">002</div>
+      <div class="card-number">003</div>
       <h3 class="card-title">Project Beta</h3>
       <p class="card-desc">Describe the purpose and impact of this project in two or three concise sentences. What did you build and why?</p>
       <div class="card-tags">
@@ -588,25 +835,6 @@
         <div class="card-status">
           <div class="status-dot in-progress"></div>
           In Progress
-        </div>
-        <span class="card-arrow">↗</span>
-      </div>
-    </div>
-
-    <!-- Project 3 -->
-    <div class="project-card">
-      <div class="card-number">003</div>
-      <h3 class="card-title">Project Gamma</h3>
-      <p class="card-desc">Another project placeholder. Swap this out with your real work whenever you're ready to show the world.</p>
-      <div class="card-tags">
-        <span class="tag">Next.js</span>
-        <span class="tag">Tailwind</span>
-        <span class="tag">Supabase</span>
-      </div>
-      <div class="card-footer">
-        <div class="card-status">
-          <div class="status-dot live"></div>
-          Live
         </div>
         <span class="card-arrow">↗</span>
       </div>
@@ -643,10 +871,12 @@
       </div>
       <div class="skills-list">
         <span class="skill-item">Java</span>
+        <span class="skill-item">Spring Boot</span>
         <span class="skill-item">Python</span>
         <span class="skill-item">C++</span>
         <span class="skill-item">Azure</span>
         <span class="skill-item">SQL</span>
+        <span class="skill-item">Docker</span>
         <span class="skill-item">Databricks</span>
       </div>
     </div>
@@ -664,14 +894,14 @@
     </p>
     <div class="contact-links">
       <a href="mailto:josiahkoehn@gmail.com" class="btn btn-primary">josiahkoehn@gmail.com →</a>
-      <a href="#" class="btn btn-ghost">LinkedIn ↗</a>
+      <a href="https://www.linkedin.com/in/josiah-koehn-785305122/" class="btn btn-ghost">LinkedIn ↗</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-copy">© 2025 <span>Your Name</span>. All rights reserved.</div>
+  <div class="footer-copy">© 2026 <span>Josiah Koehn</span>. All rights reserved.</div>
   <div class="footer-socials">
     <a href="https://github.com/jkoehn90">GitHub</a>
     <a href="https://www.linkedin.com/in/josiah-koehn-785305122/">LinkedIn</a>
